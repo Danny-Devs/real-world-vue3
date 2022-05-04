@@ -18,9 +18,13 @@ const router = createRouter({
       component: AboutView,
     },
     // dynamic segments start with a colon
-    { path: '/event/:id', name: 'EventDetailView', props: true, component: EventDetailView },
-    { path: '*',
-    component: NotFound}
+    {
+      path: '/event/:id',
+      name: 'EventDetailView',
+      props: true,
+      component: EventDetailView,
+    },
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
   ],
 })
 
